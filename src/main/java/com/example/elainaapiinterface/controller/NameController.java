@@ -1,7 +1,8 @@
 package com.example.elainaapiinterface.controller;
 
-import com.example.elainaapiinterface.model.User;
-import com.example.elainaapiinterface.utils.SignUtils;
+
+import com.example.elainaapisdk.model.User;
+import com.example.elainaapisdk.utils.SignUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -32,6 +33,7 @@ public class NameController {
         if(!sign.equals(genSign)){
             throw new RuntimeException("无权限");
         }
-        return "POST:"+user.getUsername();
+        String result="POST:"+user.getUsername();
+        return result;
     }
 }
